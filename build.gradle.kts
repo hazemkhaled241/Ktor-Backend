@@ -1,9 +1,10 @@
 plugins {
     kotlin("jvm") version "1.9.0"
+    kotlin("plugin.serialization") version "1.9.10"
     application
 }
 
-group = "org.example"
+group = "com.hazem"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -14,6 +15,7 @@ dependencies {
     testImplementation(kotlin("test"))
     implementation("io.ktor:ktor-server-core:2.3.4")
     implementation("io.ktor:ktor-server-netty:2.3.4")
+    implementation("io.ktor:ktor-serialization:2.3.4")
     implementation("ch.qos.logback:logback-classic:1.4.11")
 }
 
@@ -26,5 +28,5 @@ kotlin {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("io.ktor.server.netty.EngineMain")
 }
