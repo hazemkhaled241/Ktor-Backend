@@ -1,4 +1,4 @@
-package com
+package com.hazem
 
 import com.hazem.plugins.*
 import io.ktor.server.application.*
