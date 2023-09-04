@@ -19,7 +19,6 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:2.3.4")
     implementation("io.ktor:ktor-serialization:2.3.4")
     implementation("ch.qos.logback:logback-classic:1.4.11")
-    implementation("org.jetbrains.kotlin:kotlin-test:1.4.11")
     implementation ("io.insert-koin:koin-ktor:3.4.3")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.4")
     implementation("io.ktor:ktor-server-content-negotiation:2.3.4")
