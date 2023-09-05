@@ -3,7 +3,7 @@ package com.hazem.repository
 import com.hazem.models.ApiResponse
 import com.hazem.models.Hero
 
-class HeroRepositoryImp() :HeroRepository {
+class HeroRepositoryImp() : HeroRepository {
 
     override val heroes: Map<Int, List<Hero>> by lazy {
         mapOf(
@@ -395,7 +395,13 @@ class HeroRepositoryImp() :HeroRepository {
     )
 
     override suspend fun getAllHeroes(page: Int): ApiResponse {
-        TODO("Not yet implemented")
+        return ApiResponse(
+            success = true,
+            heroes = heroes[page]!!,
+            message = "OK",
+            prevPage = if (page > 1) page.minus(1) else null,
+            nextPage = if (page < 5) page.plus(1) else null,
+        )
     }
 
     override suspend fun searchHeroes(name: String): ApiResponse {
