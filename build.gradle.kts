@@ -14,6 +14,9 @@ repositories {
 dependencies {
     implementation("io.ktor:ktor-server-call-logging-jvm:2.3.4")
     implementation("io.ktor:ktor-server-default-headers-jvm:2.3.4")
+    implementation("io.ktor:ktor-server-core-jvm:2.3.4")
+    implementation("io.ktor:ktor-server-host-common-jvm:2.3.4")
+    implementation("io.ktor:ktor-server-status-pages-jvm:2.3.4")
     testImplementation(kotlin("test"))
     implementation("io.ktor:ktor-server-core:2.3.4")
     implementation("io.ktor:ktor-server-netty:2.3.4")
