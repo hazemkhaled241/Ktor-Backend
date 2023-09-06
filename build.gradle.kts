@@ -1,6 +1,8 @@
 plugins {
     kotlin("jvm") version "1.9.0"
-    id("io.ktor.plugin") version "2.3.4"}
+    id("io.ktor.plugin") version "2.3.4"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.0"
+}
 
 group = "com.hazem"
 version = "1.0-SNAPSHOT"
@@ -12,8 +14,14 @@ application {
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
 
+tasks.create("stage"){
+    dependsOn("installDist")
+}
+
 repositories {
     mavenCentral()
+    maven { url = uri("https://maven.pkg.jetbrains.space/public/p/ktor/eap") }
+
 }
 
 dependencies {
@@ -32,6 +40,7 @@ dependencies {
     implementation("io.insert-koin:koin-logger-slf4j:3.4.3")
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.9.0")
+    testImplementation("io.ktor:ktor-client-mock:2.3.4")
 }
 
 
