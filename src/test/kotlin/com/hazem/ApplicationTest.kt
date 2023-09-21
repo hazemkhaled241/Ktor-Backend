@@ -5,6 +5,7 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.server.testing.*
+import io.ktor.util.date.*
 import kotlinx.serialization.json.Json
 import org.junit.Test
 import kotlin.test.*
@@ -31,6 +32,7 @@ class ApplicationTest {
             prevPage = null,
             nextPage = 2,
             heroes = heroes[0],
+            lastUpdated =actual.lastUpdated
         )
         assertEquals(expected.toString(), actual.toString())
     }
@@ -43,7 +45,7 @@ class ApplicationTest {
         val expected = ApiResponse(
             success = true,
             message = "ok",
-            heroes = findHeroes("s"),
+            heroes = findHeroes("s")
         )
         assertEquals(expected.toString(), actual.toString())
 
