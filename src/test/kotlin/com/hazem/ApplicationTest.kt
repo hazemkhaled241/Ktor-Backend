@@ -5,10 +5,9 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.server.testing.*
-import io.ktor.util.date.*
 import kotlinx.serialization.json.Json
 import org.junit.Test
-import kotlin.test.*
+import kotlin.test.assertEquals
 
 class ApplicationTest {
 
