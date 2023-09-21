@@ -401,6 +401,7 @@ class HeroRepositoryImp() : HeroRepository {
             message = "OK",
             prevPage = if (page > 1) page.minus(1) else null,
             nextPage = if (page < 5) page.plus(1) else null,
+            lastUpdated = System.currentTimeMillis()
         )
     }
 
